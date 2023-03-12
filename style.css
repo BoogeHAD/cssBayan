@@ -1,0 +1,164 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700&display=swap";
+
+* {
+text-decoration:none;
+color:inherit;
+background-color:transparent;
+cursor:pointer;
+font-size:inherit;
+font-family:inherit;
+line-height:inherit;
+padding:0;
+margin:0;
+border:none;
+box-sizing:border-box;
+font-family:Roboto,sans-serif
+}
+
+body {
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:100vh
+}
+
+::selection {
+background:#36e600
+}
+
+.wrapper {
+max-width:700px;
+padding:0 15px
+}
+
+.wrapper .accordion {
+margin-bottom:6px;
+border-radius:2px;
+box-shadow:0 0 15px rgba(0,0,0,0.18)
+}
+
+.wrapper .accordion label {
+z-index:99;
+position:relative;
+background:#36e600;
+display:flex;
+align-items:center;
+justify-content:space-between;
+cursor:pointer;
+border-radius:3px;
+padding:15px 25px;
+transition:all .7s ease
+}
+
+.wrapper .accordion label:hover {
+background:#36e600
+}
+
+.accordion input:checked ~ label {
+border-radius:3px 3px 0 0;
+background:#36e600
+}
+
+.wrapper label span {
+color:#fff;
+font-size:18px;
+font-weight:500;
+text-shadow:0 -1px 1px #36e600;
+font-size:17px
+}
+
+.accordion label .icon {
+position:relative;
+height:30px;
+width:30px;
+font-size:15px;
+color:#36e600;
+display:block;
+background:#fff;
+border-radius:50%;
+text-shadow:0 -1px 1px #36e600
+}
+
+.wrapper:hover .accordion label {
+background-image:linear-gradient(45deg,#f00,#f80,#ff0,#8f0,#0f0,#0f8,#00f,#80f,#f0f,#f08,#f00);
+background-size:200% 200%;
+animation:rainbow 2s ease-in-out infinite
+}
+
+.wrapper:hover .accordion label .icon {
+color:linear-gradient(45deg,#f00,#f80,#ff0,#8f0,#0f0,#0f8,#00f,#80f,#f0f,#f08,#f00)!important;
+text-shadow:0 -1px 1px linear-gradient(45deg,#f00,#f80,#ff0,#8f0,#0f0,#0f8,#00f,#80f,#f0f,#f08,#f00);
+animation:rainbow 2s ease-in-out infinite
+}
+
+@keyframes rainbow {
+0% {
+background-position:0 50%
+}
+
+100% {
+background-position:100% 50%
+}
+}
+
+.wrapper label .icon {
+height:27px;
+width:27px
+}
+
+.accordion label .icon i {
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%)
+}
+
+img {
+width:400px;
+height:526px
+}
+
+.wrapper .accordion label:hover {
+cursor:pointer
+}
+
+.icon i.accordion__icon_inactive {
+display:inline
+}
+
+.accordion input:checked ~ label .icon i.accordion__icon_inactive {
+display:inline
+}
+
+.accordion input:checked ~ label .icon i.accordion__icon_active {
+display:none
+}
+
+.accordion:hover .icon i.accordion__icon_active {
+display:none
+}
+
+.accordion:hover .icon i.accordion__icon_inactive {
+display:inline-block
+}
+
+.wrapper .accordion .accordion__content {
+max-height:0;
+overflow:hidden;
+background:#fff;
+border-radius:0 0 3px 3px;
+transition:all .7s ease
+}
+
+.accordion input:checked ~ .accordion__content,.accordion input:hover ~ .accordion__content,.accordion .accordion__content:hover {
+max-height:100vh
+}
+
+.accordion .accordion__content p {
+padding:15px 20px;
+font-size:16px
+}
+
+input[type="radio"],input[type="checkbox"] {
+display:none
+}
